@@ -7,6 +7,8 @@ import {Layout} from "antd";
 import {Route, Switch} from "react-router-dom";
 import Message from "./Message";
 import CustomHeader from "../components/CustomHeader";
+import Calendars from "../components/header/Calendars";
+import NoMatch from "./404";
 
 const {Content, Footer} = Layout;
 
@@ -36,6 +38,8 @@ export default class App extends Component {
           <Content style={{margin: '0 16px'}}>
             <Switch>
               <Route exact path={'/app'} component={Message} />
+              <Route exact path={'/app/header/Calendars'} component={Calendars} />
+              <Route component={NoMatch} />
             </Switch>
           </Content>
           <Footer style={{textAlign: 'center'}}>

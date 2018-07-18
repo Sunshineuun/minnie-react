@@ -6,7 +6,7 @@ import React from 'react';
 import {Route, Router, Switch} from 'react-router-dom';
 import history from '../containers/history';
 
-import App from './../App';
+import App from './../containers/App';
 import Home from './../containers/Home';
 import Login from '../containers/Login';
 import NoMatch from '../containers/404';

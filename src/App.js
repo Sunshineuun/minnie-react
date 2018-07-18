@@ -7,9 +7,6 @@ import 'moment/locale/zh-cn';
 moment.locale('zh-cn');
 
 class App extends Component {
-  render() {
-    return <div>{this.props.children}</div>;
-  }
 }
 
 export default App;

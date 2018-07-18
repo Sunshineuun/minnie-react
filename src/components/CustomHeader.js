@@ -43,8 +43,8 @@ export default class CustomHeader extends Component {
           mode="horizontal"
           style={{lineHeight: '64px', float: 'right'}}
         >
-          <Menu.Item key="schedule">
-            <Link to="/app/header/Calendars">
+          <Menu.Item key={'schedule'}>
+            <Link to={'/app/header/Calendars'}>
               <Badge count={3} overflowCount={99} style={{height: '15px', lineHeight: '15px'}}>
                 <Icon type="schedule" style={{fontSize: 16, color: '#1DA57A'}}/>
               </Badge>
@@ -52,7 +52,7 @@ export default class CustomHeader extends Component {
           </Menu.Item>
           <SubMenu
             title={<span>
-                            <Icon type="user" style={{fontSize: 16, color: '#1DA57A'}}/>{this.props.username}
+                            <Icon type="user" style={{fontSize: 16, color: '#1DA57A'}}/>{"qiushengming"}
                         </span>}
           >
             <Menu.Item key="logout" style={{textAlign: 'center'}} className="logout">
