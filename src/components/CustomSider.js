@@ -17,10 +17,39 @@ class CustomSider extends Component {
     }
   }
 
-  toggle = () => {
+  componentDidMount() {
+    this.setMenuOpen(this.props);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.onCollapse(nextProps.collapsed);
+    this.setMenuOpen(nextProps);
+  }
+
+  setMenuOpen = props => {
+    const {path} = props;
+    console.log(props);
     this.setState({
-      collapsed: !this.state.collapsed,
+      /*openKey: path.substr(0, path.lastIndexOf('/')),
+      selectedKey: path*/
     });
+  };
+  onCollapse = (collapsed) => {
+    this.setState({
+      collapsed,
+      firstHide: collapsed,
+    });
+  };
+  menuClick = e => {
+    this.setState({
+      selectedKey: e.key
+    });
+  };
+  openMenu = v => {
+    this.setState({
+      openKey: v[v.length - 1],
+      firstHide: false,
+    })
   };
 
   render() {
