@@ -7,6 +7,7 @@ const {Sider} = Layout;
 
 class CustomSider extends Component {
   constructor(props) {
+    console.log(props);
     super(props);
     const {collapsed} = props;
     this.state = {
@@ -64,15 +65,14 @@ class CustomSider extends Component {
               openKeys={firstHide ? null : [openKey]}
               defaultSelectedKeys={['1']}>
           <Menu.Item key={"/app"}>
-            <Link to={"/app"}>
-              <Icon type="home"/>
-              <span>首页</span>
-            </Link>
+            <Link to={"/app"}><Icon type="home"/><span>首页</span></Link>
+          </Menu.Item>
+          <Menu.Item key="/app/upload">
+            <Link to={'/app/upload'}><Icon type="upload" /><span>文件上传</span></Link>
           </Menu.Item>
         </Menu>
       </Sider>
     );
   }
 }
-
 export default CustomSider;

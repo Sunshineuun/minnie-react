@@ -11,14 +11,24 @@ import Calendars from "../components/header/Calendars";
 import NoMatch from "./404";
 import moment from 'moment';
 import 'moment/locale/zh-cn';
+import UploadEditor from "../components/upload/UploadEditor";
+import {matchPath} from 'react-router'
 
 moment.locale('zh-cn');
+
+const match = matchPath('/users/123', {
+  path: '/users/:id',
+  exact: true,
+  strict: false
+});
+
 const {Content, Footer} = Layout;
 
 export default class App extends Component {
   state = {
     collapsed: localStorage.getItem("mspa_SiderCollapsed") === "true",
   };
+
   toggle = () => {
     this.setState({
       collapsed: !this.state.collapsed,
@@ -31,6 +41,8 @@ export default class App extends Component {
     const {collapsed} = this.state;
     const {location} = this.props;
     console.log(location);
+    console.log(this.props);
+
     let name = 'qiushengming';
 
     return (
@@ -42,7 +54,8 @@ export default class App extends Component {
             <Switch>
               <Route exact path={'/'} component={Message}/>
               <Route exact path={'/app'} component={Message}/>
-              <Route exact path={'/app/header/Calendars'} component={Calendars}/>
+              <Route exact path={'/calendars'} component={Calendars}/>
+              <Route exact path={'/app/upload'} component={UploadEditor}/>
               <Route component={NoMatch}/>
             </Switch>
           </Content>
