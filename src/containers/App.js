@@ -9,7 +9,10 @@ import Message from "./Message";
 import CustomHeader from "../components/CustomHeader";
 import Calendars from "../components/header/Calendars";
 import NoMatch from "./404";
+import moment from 'moment';
+import 'moment/locale/zh-cn';
 
+moment.locale('zh-cn');
 const {Content, Footer} = Layout;
 
 export default class App extends Component {
@@ -37,9 +40,10 @@ export default class App extends Component {
           <CustomHeader collapsed={collapsed} toggle={this.toggle} username={name}/>
           <Content style={{margin: '0 16px'}}>
             <Switch>
-              <Route exact path={'/app'} component={Message} />
-              <Route exact path={'/app/header/Calendars'} component={Calendars} />
-              <Route component={NoMatch} />
+              <Route exact path={'/'} component={Message}/>
+              <Route exact path={'/app'} component={Message}/>
+              <Route exact path={'/app/header/Calendars'} component={Calendars}/>
+              <Route component={NoMatch}/>
             </Switch>
           </Content>
           <Footer style={{textAlign: 'center'}}>
