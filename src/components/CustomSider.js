@@ -70,6 +70,9 @@ class CustomSider extends Component {
           <Menu.Item key="/app/upload">
             <Link to={'/app/upload'}><Icon type="upload" /><span>文件上传</span></Link>
           </Menu.Item>
+          <Menu.Item>
+            <Link to={'/app/fileList'}><Icon type={"file"}/><span>文件列表</span></Link>
+          </Menu.Item>
         </Menu>
       </Sider>
     );
