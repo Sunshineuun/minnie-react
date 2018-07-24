@@ -13,6 +13,7 @@ import moment from 'moment';
 import 'moment/locale/zh-cn';
 import UploadEditor from "../components/upload/UploadEditor";
 import {matchPath} from 'react-router'
+import FileList from "./FileList";
 
 moment.locale('zh-cn');
 
@@ -54,13 +55,14 @@ export default class App extends Component {
             <Switch>
               <Route exact path={'/'} component={Message}/>
               <Route exact path={'/app'} component={Message}/>
-              <Route exact path={'/calendars'} component={Calendars}/>
+              <Route exact path={'/app/test1'} component={Calendars}/>
               <Route exact path={'/app/upload'} component={UploadEditor}/>
+              <Route exact path={'/app/fileList'} component={FileList}/>
               <Route component={NoMatch}/>
             </Switch>
           </Content>
           <Footer style={{textAlign: 'center'}}>
-            MSPA ©2017-2018 Created by zysoft
+            MSPA ©2017-2018 Created by MinnieSoft
           </Footer>
         </Layout>
       </Layout>
